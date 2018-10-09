@@ -1,0 +1,6 @@
+spring:
+  activiti:
+    check-process-definitions: true
+logging:
+  pattern:
+    level: DEBUG
