@@ -1,6 +1,9 @@
 spring:
   activiti:
-    check-process-definitions: true
+    check-process-definitions: true # 是否自动检查bpmn文件，/processes
+  jpa:
+    hibernate:
+      ddl-auto: update
 logging:
   pattern:
     level: DEBUG

@@ -1,13 +1,11 @@
 package com.corning.activiti.sb.controller;
 
-import com.corning.activiti.sb.dao.TaskRepresentation;
+import com.corning.activiti.sb.repository.model.StartProcessRepresentation;
+import com.corning.activiti.sb.repository.model.TaskRepresentation;
 import com.corning.activiti.sb.service.ActivitiService;
 import org.activiti.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +17,8 @@ public class ActivitiController {
     private ActivitiService activitiService;
 
     @PostMapping("/process")
-    public void startProcessInstance() {
-        activitiService.startProcess();
+    public void startProcessInstance(@RequestBody StartProcessRepresentation startProcessRepresentation) {
+        activitiService.startProcess(startProcessRepresentation.getAssignee());
     }
 
     @GetMapping("/tasks")

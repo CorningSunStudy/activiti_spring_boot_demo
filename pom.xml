@@ -32,7 +32,7 @@
         <!-- activiti -->
         <dependency>
             <groupId>org.activiti</groupId>
-            <artifactId>activiti-spring-boot-starter-basic</artifactId>
+            <artifactId>activiti-spring-boot-starter-jpa</artifactId>
             <version>${activiti.version}</version>
         </dependency>
         <dependency>

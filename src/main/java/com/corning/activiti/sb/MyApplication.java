@@ -1,5 +1,6 @@
 package com.corning.activiti.sb;
 
+import com.corning.activiti.sb.service.ActivitiService;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
@@ -33,6 +34,11 @@ public class MyApplication {
             runtimeService.startProcessInstanceByKey("oneTaskProcess");
             log.info("Number of tasks after process start: " + taskService.createTaskQuery().count());
         };
+    }
+
+    @Bean
+    public CommandLineRunner init(final ActivitiService activitiService) {
+        return args -> activitiService.createDemoUsers();
     }
 
     @Bean

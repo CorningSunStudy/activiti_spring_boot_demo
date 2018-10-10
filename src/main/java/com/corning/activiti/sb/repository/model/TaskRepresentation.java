@@ -1,4 +1,4 @@
-package com.corning.activiti.sb.dao;
+package com.corning.activiti.sb.repository.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
